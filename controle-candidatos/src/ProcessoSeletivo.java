@@ -4,6 +4,23 @@ public class ProcessoSeletivo {
     public static void main(String[] args) {
         selecaoCandidatos();
     }
+
+    static void imprimirSelecionados(){
+        String [] candidatos = {"FELIPE", "MARCIA", "JULIA", "pAULO", "AUGUSTO"};
+
+        System.out.println("Imprimindo a lista de candidatos informando o indice do elemento");
+
+        for (int indice=0; indice < candidatos.length;indice++){
+            System.out.println("O candidato de n "+ (indice+1)+ " é " + candidatos[indice]);
+        }
+
+        System.out.println("Forma variada de interação for each");
+
+        for(String candidato: candidatos){
+            System.out.println("O candidato selecionado foi " + candidato);
+        }
+    }
+
     static void selecaoCandidatos() {
         String [] candidatos = {"FELIPE", "MARCIA", "JULIA", "pAULO", "AUGUSTO", "MONICA", "FABRICIO", "MIRELA", "DANIELA", "JOGE"};
 
@@ -11,7 +28,7 @@ public class ProcessoSeletivo {
         int candidatosAtual=0;
         double salarioBase=2000.0;
 
-        while (candidatosSelecionados < 5){
+        while (candidatosSelecionados < 5 && candidatosAtual < candidatos.length){
             String candidato = candidatos[candidatosAtual];
             double salarioPretendido = valorPretendido();
 
